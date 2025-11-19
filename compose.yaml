@@ -1,0 +1,9 @@
+services:
+    mongo:
+        image: mongo:4.4
+        restart: always
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: MONGO_DOCKER_USER
+            MONGO_INITDB_ROOT_PASSWORD: MONGO_DOCKER_PASS
+        volumes:
+            - ./docker/mongo
