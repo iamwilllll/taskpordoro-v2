@@ -15,5 +15,5 @@ async function main() {
     server.use(express.json());
 
     //* Routes
-    server.use(appRouter);
+    server.use('/api', appRouter);
 }
