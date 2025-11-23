@@ -2,6 +2,6 @@
     "watch": ["src"],
     "ext": "ts,json",
     "ignore": ["src/**/*.spec.ts"],
-    "exec": "node --loader ts-node/esm --no-warnings ./src/app.ts",
+    "exec": "tsx --no-warnings ./src/app.ts",
     "verbose": false
 }
