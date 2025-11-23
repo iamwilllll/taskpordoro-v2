@@ -2,8 +2,6 @@ import express, { Express } from 'express';
 import colors from 'colors';
 import config from './config.js';
 
-
-
 export default class Server {
     static init(): Express {
         const PORT = config.port;

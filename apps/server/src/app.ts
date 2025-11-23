@@ -6,7 +6,6 @@ import Database from './config/db.js';
 import appRouter from './routes/appRouter.js';
 import { corsOptions } from './config/config.js';
 
-
 (async () => {
     await main();
     await Database.connect();
