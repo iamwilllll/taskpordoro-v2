@@ -1,11 +1,13 @@
 import { Router } from 'express';
 import authControllers from './auth.controllers.js';
-import handleInputsErrors from '../../middlewares/handleInputsErrors.js';
-import registerMiddleware from '../../middlewares/registerMiddleware.js';
+import { handleInputsErrors, registerMiddlewares, loginMiddlewares, validateToken } from '../../middlewares/index.js';
 
 const authRoutes: Router = Router();
 
-authRoutes.get('/register', registerMiddleware, handleInputsErrors, authControllers.register);
-authRoutes.get('/login', authControllers.login);
+authRoutes.post('/register', registerMiddlewares, handleInputsErrors, authControllers.register);
+authRoutes.post('/login', loginMiddlewares, handleInputsErrors, authControllers.login);
+authRoutes.post('/logout', authControllers.logout);
+
+authRoutes.get('/profile', validateToken, authControllers.profile);
 
 export default authRoutes;

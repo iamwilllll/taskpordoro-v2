@@ -1,3 +1,4 @@
+import { Document } from 'mongoose';
 import * as z from 'zod';
 
 export const UserZodSchema = z.object({
@@ -6,4 +7,5 @@ export const UserZodSchema = z.object({
     password: z.string(),
 });
 
-export type UserT = z.input<typeof UserZodSchema>;
+export type UserT = z.input<typeof UserZodSchema> & Document;
+export type UserWithOutPassT = Omit<UserT, 'password'>;

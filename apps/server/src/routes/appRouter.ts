@@ -6,3 +6,6 @@ const appRouter: Router = Router();
 appRouter.use(authRoutes);
 
 export default appRouter;
+
+
+ 
