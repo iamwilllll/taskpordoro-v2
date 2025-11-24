@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt, { type VerifyErrors } from 'jsonwebtoken';
-import config from '../config/config.js';
-import { UserT } from '../types/user.types.js';
+import config from '../../config/config.js';
+import { UserT } from '../../types/user.types.js';
 
 export default function validateToken(req: Request, res: Response, next: NextFunction) {
     const secret = config.jwt.api_key;
