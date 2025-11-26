@@ -1,21 +1,35 @@
 @import 'tailwindcss';
 
 :root {
-    --first-font: 'Plus Jakarta Sans', sans-serif;
+    --primary-font: 'Plus Jakarta Sans', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
 
     --primary-600: #3d53db;
     --secondary-300: #8e92bc;
     --secondary-400: #54577a;
     --secondary-500: #141522;
     --secondary-600: #262733;
+
+    --error: #d84949;
+    --success: green;
 }
 
 @theme {
-    --font-primary: var(--first-font);
+    --font-primary: var(--primary-font);
+    --font-secondary: var(--secondary-font);
 
     --color-primary-600: var(--primary-600);
     --color-secondary-300: var(--secondary-300);
     --color-secondary-400: var(--secondary-400);
     --color-secondary-500: var(--secondary-500);
     --color-secondary-600: var(--secondary-600);
+
+    --color-error: var(--error);
+    --color-success: var(--success);
+}
+
+html,
+body,
+#root {
+    height: 100%;
 }
