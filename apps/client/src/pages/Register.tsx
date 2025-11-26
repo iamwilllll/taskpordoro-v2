@@ -93,7 +93,7 @@ export default function Register() {
                     />
 
                     {
-                        <p className="text-error font-secondary mx-[14px] mt-0 h-5 -translate-y-5 text-end text-[12px]">
+                        <p className="text-error font-secondary mx-3.5 mt-0 h-5 -translate-y-5 text-end text-[12px]">
                             {apiMessageResponse}
                         </p>
                     }
