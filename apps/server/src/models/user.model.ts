@@ -24,13 +24,12 @@ const UserSchema = new Schema<UserT>(
 
         resetToken: {
             type: String,
-            required:false
-
+            required: false,
         },
 
         resetTokenExpire: {
             type: Number,
-            required:false
+            required: false,
         },
     },
     {

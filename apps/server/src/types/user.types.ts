@@ -7,8 +7,7 @@ export const UserZodSchema = z.object({
     password: z.string(),
 
     resetToken: z.string().optional(),
-    resetTokenExpire: z.number().optional()
-    
+    resetTokenExpire: z.number().optional(),
 });
 
 export type UserT = z.input<typeof UserZodSchema> & Document;

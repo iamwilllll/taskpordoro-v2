@@ -17,7 +17,7 @@ const config = {
 
 //? cors
 
-const whitelist = [config.url];
+const whitelist = [config.url, 'http://localhost:5173'];
 export const corsOptions: CorsOptions = {
     origin: function (origin, callback) {
         if (!origin) return callback(null, false);

@@ -1,9 +1,6 @@
-import handleInputsErrors from '../handleInputsErrors.js'
-import { body } from 'express-validator'
+import handleInputsErrors from '../handleInputsErrors.js';
+import { body } from 'express-validator';
 
-const forgotPasswordMiddlewares  = [
-       body('email').notEmpty().withMessage('email is required'),
-        handleInputsErrors,
-]
+const forgotPasswordMiddlewares = [body('email').notEmpty().withMessage('email is required'), handleInputsErrors];
 
-export default  forgotPasswordMiddlewares
+export default forgotPasswordMiddlewares;

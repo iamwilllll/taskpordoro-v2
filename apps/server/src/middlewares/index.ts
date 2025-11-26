@@ -7,6 +7,12 @@ import forgotPasswordMiddlewares from './auth/forgotPasswordMiddlewares.js';
 import validateTokenMiddlewares from './auth/validateTokenMiddlewares.js';
 import resetPasswordMiddlewares from './auth/resetPasswordMiddlewares.js';
 
-
-
-export { handleInputsErrors, registerMiddlewares, loginMiddlewares, validateToken,forgotPasswordMiddlewares,validateTokenMiddlewares ,resetPasswordMiddlewares};
+export {
+    handleInputsErrors,
+    registerMiddlewares,
+    loginMiddlewares,
+    validateToken,
+    forgotPasswordMiddlewares,
+    validateTokenMiddlewares,
+    resetPasswordMiddlewares,
+};

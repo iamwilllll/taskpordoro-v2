@@ -1,7 +1,8 @@
-import { body } from "express-validator";
-import handleInputsErrors from "../handleInputsErrors.js";
+import { body } from 'express-validator';
+import handleInputsErrors from '../handleInputsErrors.js';
 
-const resetPasswordMiddlewares = [     body('email').notEmpty().withMessage('Email is required').isEmail().withMessage('Email is not valid'),
+const resetPasswordMiddlewares = [
+    body('email').notEmpty().withMessage('Email is required').isEmail().withMessage('Email is not valid'),
     body('newPassword').notEmpty().withMessage('Password is required'),
     body('repeat_password')
         .notEmpty()
@@ -13,7 +14,7 @@ const resetPasswordMiddlewares = [     body('email').notEmpty().withMessage('Ema
             if (newPassword.length < 8) throw new Error('The password is very short');
             return true;
         }),
-    handleInputsErrors,]
-    
-    
-    export default  resetPasswordMiddlewares
+    handleInputsErrors,
+];
+
+export default resetPasswordMiddlewares;
