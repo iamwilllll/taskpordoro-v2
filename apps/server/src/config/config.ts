@@ -13,11 +13,16 @@ const config = {
     database: {
         url: process.env.DATABASE_URL || '',
     },
+
+    nodemailer: {
+        user: process.env.SMTP_USER || '',
+        pass: process.env.SMTP_PASS || '',
+    },
 } as const;
 
-//? cors
-
+//* cors
 const whitelist = [config.url, 'http://localhost:5173'];
+
 export const corsOptions: CorsOptions = {
     origin: function (origin, callback) {
         if (!origin) return callback(null, false);

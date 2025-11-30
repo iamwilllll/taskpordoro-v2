@@ -9,10 +9,10 @@ export async function logoutController(req: Request, res: Response) {
         });
 
         return res.json({
-            success: true,
+            ok: true,
             message: 'Logout successful',
         });
     } catch (err) {
-        return res.status(400).json({ success: false, message: (err as Error).message });
+        return res.status(400).json({ ok: false, message: (err as Error).message });
     }
 }

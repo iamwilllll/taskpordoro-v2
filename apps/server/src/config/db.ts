@@ -7,11 +7,8 @@ export default class Database {
         try {
             const URL = config.database.url;
             if (!URL) throw new Error('Database URL is not available');
-            const { connection } = await mongoose.connect(URL, {
-                serverSelectionTimeoutMS: 30000,
-                retryWrites: true,
-                w: 'majority',
-            });
+
+            const { connection } = await mongoose.connect(URL, { serverSelectionTimeoutMS: 30000 });
 
             console.log(colors.cyan.bold(`Database connection was successful on ${connection.host}:${connection.port}`));
         } catch (err) {

@@ -20,14 +20,6 @@ async function main() {
     server.use(cors(corsOptions));
 
     //* Routes
-    server.get('/api', (req, res) => {
-        res.json({ message: 'wilfryn' });
-    });
     server.use('/api', authRoutes);
     server.use('/api', userRoutes);
-
-    //* Listen server
-    server.listen(3000, () => {
-        console.log('Server running on port 3000');
-    });
 }
