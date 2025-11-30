@@ -1,7 +1,5 @@
 const config = {
-    auth: {
-        login: 'http://localhost:3000/api/login',
-        register: 'http://localhost:3000/api/register',
-    },
+    baseUrl: 'http://localhost:3000/api',
 };
+
 export default config;
