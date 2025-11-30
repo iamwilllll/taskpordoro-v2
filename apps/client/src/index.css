@@ -5,6 +5,8 @@
     --secondary-font: 'Roboto', sans-serif;
 
     --primary-600: #3d53db;
+    --primary-500: #f0f0f0;
+    --secondary-200: #d7d7d7;
     --secondary-300: #8e92bc;
     --secondary-400: #54577a;
     --secondary-500: #141522;
@@ -12,6 +14,7 @@
 
     --error: #d84949;
     --success: green;
+    --modal: #000000aa;
 }
 
 @theme {
@@ -19,6 +22,8 @@
     --font-secondary: var(--secondary-font);
 
     --color-primary-600: var(--primary-600);
+    --color-primary-500: var(--primary-500);
+    --color-secondary-200: var(--secondary-200);
     --color-secondary-300: var(--secondary-300);
     --color-secondary-400: var(--secondary-400);
     --color-secondary-500: var(--secondary-500);
@@ -26,10 +31,76 @@
 
     --color-error: var(--error);
     --color-success: var(--success);
+    --color-modal: var(--modal);
 }
 
 html,
 body,
 #root {
     height: 100%;
+}
+
+.rough_texture_background {
+    background-image: url('/rough_texture.png');
+    background-repeat: repeat;
+    background-size: contain;
+    height: 100%;
+}
+
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -8px 0 0 -8px;
+    width: 16px;
+    aspect-ratio: 1;
+    background: var(--color-primary-600);
+    animation:
+        l2-1 2s infinite,
+        l2-2 1s infinite;
+}
+.loader:after {
+    background: #ffffff;
+    animation-delay: -1s, 0s;
+}
+
+@keyframes l2-1 {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 100%;
+        left: 0;
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+    }
+    75% {
+        top: 0;
+        left: 100%;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes l2-2 {
+    40%,
+    50% {
+        transform: rotate(0.25turn) scale(0.5);
+    }
+    100% {
+        transform: rotate(0.5turn) scale(1);
+    }
 }
