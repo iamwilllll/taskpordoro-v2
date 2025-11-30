@@ -12,14 +12,14 @@ export async function validateTokenController(req: Request, res: Response) {
         });
 
         if (!user) {
-            return res.status(401).json({ success: false, message: 'Invalid or expired token' });
+            return res.status(401).json({ ok: false, message: 'Invalid or expired token' });
         }
 
         return res.json({
-            success: true,
+            ok: true,
             message: 'Valid token',
         });
     } catch (err) {
-        return res.status(500).json({ success: false, message: (err as Error).message });
+        return res.status(500).json({ ok: false, message: (err as Error).message });
     }
 }

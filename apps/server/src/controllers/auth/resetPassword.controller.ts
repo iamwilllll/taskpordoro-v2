@@ -1,6 +1,6 @@
 import type { Request, Response } from 'express';
 import UserModel from '../../models/user.model.js';
-import hashPassword from '../../lib/hashPassword.js';
+import hashPassword from '../../utils/hashPassword.js';
 
 export async function resetPasswordController(req: Request, res: Response) {
     try {
@@ -21,10 +21,10 @@ export async function resetPasswordController(req: Request, res: Response) {
         await user.save();
 
         return res.json({
-            success: true,
+            ok: true,
             message: 'Password updated successfully',
         });
     } catch (err) {
-        return res.status(500).json({ success: false, message: (err as Error).message });
+        return res.status(500).json({ ok: false, message: (err as Error).message });
     }
 }
