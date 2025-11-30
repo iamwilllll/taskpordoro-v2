@@ -3,7 +3,7 @@ import { UserZodSchema } from '../../types/user.types.js';
 import UserModel from '../../models/user.model.js';
 import hashPassword from '../../utils/hashPassword.js';
 import getUserWithoutPass from '../../utils/getUserWithoutPass.js';
-// import sendEmail from '../../service/sendEmail.service.js';
+import sendEmail from '../../service/sendEmail.service.js';
 
 export async function registerController(req: Request, res: Response) {
     try {
@@ -22,8 +22,7 @@ export async function registerController(req: Request, res: Response) {
         newUser.verificationTokenExpire = new Date(Date.now() + 10 * 60 * 1000);
 
         // ? send email
-        console.log(token);
-        // await sendEmail({ code: token, to: email, text: 'Text', subject: 'text' });
+        await sendEmail({  code: token, to: email, text: 'Text', subject: 'Verify account' });
 
         const savedUser = await newUser.save();
         const userWithoutPassword = getUserWithoutPass(savedUser);

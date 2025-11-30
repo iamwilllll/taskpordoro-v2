@@ -18,7 +18,7 @@ export default async function sendEmail({ code, to, subject, text }: SendEmailPr
     const html = emailTemplate
         .replace('{{Code}}', code)
         .replace('{{LinkApp}}', config.url)
-        .replace('{{linkToLogin}}', `${config.url}/login`);
+        .replace('{{linkToLogin}}', `${config.url}/verifyUser?email=${to}&token=${code}`);
 
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
