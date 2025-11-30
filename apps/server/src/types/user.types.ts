@@ -6,8 +6,12 @@ export const UserZodSchema = z.object({
     email: z.string(),
     password: z.string(),
 
+    verified: z.boolean().optional(),
+    verificationToken: z.string().optional(),
+    verificationTokenExpire: z.date().optional(),
+
     resetToken: z.string().optional(),
-    resetTokenExpire: z.number().optional(),
+    resetTokenExpire: z.date().optional(),
 });
 
 export type UserT = z.input<typeof UserZodSchema> & Document;
